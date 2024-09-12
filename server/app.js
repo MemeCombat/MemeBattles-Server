@@ -8,7 +8,10 @@ const { Server } = require("socket.io");
 const { Guess } = require("./models");
 
 const app = express();
-// const port = process.env.PORT || 3000;
+const app = require("../app");
+const PORT = process.env.PORT || 3000
+
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
@@ -205,3 +208,6 @@ io.on("connection", (socket) => {
     });
 });
 
+httpServer.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
