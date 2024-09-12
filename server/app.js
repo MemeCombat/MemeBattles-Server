@@ -8,7 +8,7 @@ const { Server } = require("socket.io");
 const { Guess } = require("./models");
 
 const app = express();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
